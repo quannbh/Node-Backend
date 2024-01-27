@@ -1,13 +1,18 @@
-const http = require('node:http');//thư viện cài đặt node.js
-const hostname = '127.0.0.1'; //localhost
-const port = 3000;
+//import express from 'express';
+const express = require('express');//common js
+const app = express();// app express
+const port = 8081;// port
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n Hoi dan it voi Eric');
+
+//khai báo routes
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.get('/homepage', (req, res) => {
+  res.send('check Homepage');
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });
