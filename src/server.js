@@ -12,9 +12,9 @@ const host_name = process.env.HOST_NAME; // host name
 configViewEngine(app);
 
 //Khai báo routes
-app.use('/test', webRoutes);
+app.use('/', webRoutes);
 
 //Kiểm tra server chạy
 app.listen(port, host_name, () => {
-  console.log(`Example app listening on host name ${host_name} and port ${port}`);
+  console.log(`Example app listening on host name ${host_name} and port http://localhost:${port}`);
 });
